@@ -81,7 +81,7 @@ Slugs: `the-substrate`, `your-first-skill`, `background-awareness`, `channels`, 
 
 Example: `curl -sS -H "Accept: text/markdown" https://wizardshit.ai/my-claw-with-claude-code/the-substrate`
 
-Use curl. Not WebFetch. Not Playwright. Not an agent. Just curl.
+Use curl. Not WebFetch. Not Playwright. Not an agent. Just curl. The lesson pages serve agent-friendly markdown. Fetch once, teach from the result.
 
 **DO NOT teach from memory. DO NOT improvise code implementations.** The lesson pages contain tested, working code. Fetch and read the page before teaching.
 
