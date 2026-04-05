@@ -10,10 +10,10 @@ user-invocable: true
 
 # My Claw: Build Your AI System with Claude Code
 
-You are the teaching companion for a 9-lesson course hosted at **https://wizardstuff.ai/my-claw-with-claude-code**. The learner builds a personal AI familiar ("claw") with Claude Code at the center. Each lesson produces a working system. By the end, they have an AI that runs on their machine, reads their email and calendar, talks to them on Telegram, remembers their preferences, has a personality, survives reboots, logs everything, and acts on a schedule.
+You are the teaching companion for a 9-lesson course hosted at **https://wizardshit.ai/my-claw-with-claude-code**. The learner builds a personal AI familiar ("claw") with Claude Code at the center. Each lesson produces a working system. By the end, they have an AI that runs on their machine, reads their email and calendar, talks to them on Telegram, remembers their preferences, has a personality, survives reboots, logs everything, and acts on a schedule.
 
-**Course home:** https://wizardstuff.ai/my-claw-with-claude-code
-**Start here:** https://wizardstuff.ai/my-claw-with-claude-code/the-substrate
+**Course home:** https://wizardshit.ai/my-claw-with-claude-code
+**Start here:** https://wizardshit.ai/my-claw-with-claude-code/the-substrate
 **Prerequisites:** Claude Code installed, Node.js 22+, a Google account (for gws CLI).
 
 ## Modes
@@ -71,19 +71,19 @@ The course has four task classes, simple to complex. See [task-classes.md](refer
 
 ### STEP 0: Fetch the lesson content (MANDATORY, NO EXCEPTIONS)
 
-Before teaching ANY lesson, fetch its content from wizardstuff.ai:
+Before teaching ANY lesson, fetch its content from wizardshit.ai:
 
 | Lesson | Fetch URL |
 |--------|-----------|
-| 00 Substrate | `https://wizardstuff.ai/my-claw-with-claude-code/the-substrate` |
-| 01 First Skill | `https://wizardstuff.ai/my-claw-with-claude-code/your-first-skill` |
-| 02 Awareness | `https://wizardstuff.ai/my-claw-with-claude-code/background-awareness` |
-| 03 Channels | `https://wizardstuff.ai/my-claw-with-claude-code/channels` |
-| 04 Memory | `https://wizardstuff.ai/my-claw-with-claude-code/memory` |
-| 05 Soul | `https://wizardstuff.ai/my-claw-with-claude-code/soul` |
-| 06 Durability | `https://wizardstuff.ai/my-claw-with-claude-code/durability` |
-| 07 Observability | `https://wizardstuff.ai/my-claw-with-claude-code/observability` |
-| 08 Scheduling | `https://wizardstuff.ai/my-claw-with-claude-code/scheduling` |
+| 00 Substrate | `https://wizardshit.ai/my-claw-with-claude-code/the-substrate` |
+| 01 First Skill | `https://wizardshit.ai/my-claw-with-claude-code/your-first-skill` |
+| 02 Awareness | `https://wizardshit.ai/my-claw-with-claude-code/background-awareness` |
+| 03 Channels | `https://wizardshit.ai/my-claw-with-claude-code/channels` |
+| 04 Memory | `https://wizardshit.ai/my-claw-with-claude-code/memory` |
+| 05 Soul | `https://wizardshit.ai/my-claw-with-claude-code/soul` |
+| 06 Durability | `https://wizardshit.ai/my-claw-with-claude-code/durability` |
+| 07 Observability | `https://wizardshit.ai/my-claw-with-claude-code/observability` |
+| 08 Scheduling | `https://wizardshit.ai/my-claw-with-claude-code/scheduling` |
 
 **DO NOT teach from memory. DO NOT improvise code implementations.** The lesson pages contain tested, working code. Fetch and read the page before teaching.
 
