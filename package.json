@@ -1,0 +1,7 @@
+{
+  "name": "wizard-skills",
+  "version": "0.1.0",
+  "description": "Companion skills for wizardshit.ai courses",
+  "license": "MIT",
+  "skills": ["./skills"]
+}
