@@ -65,15 +65,34 @@ The course has four task classes, simple to complex. See [task-classes.md](refer
 
 ## Teaching Protocol
 
+### STEP 0: Load the lesson content (MANDATORY)
+
+Before teaching ANY lesson, you MUST read the lesson file:
+
+```
+content/00-my-claw-with-claude-code/{NN}-{slug}.mdx
+```
+
+Files: `00-the-substrate.mdx`, `01-your-first-skill.mdx`, `02-background-awareness.mdx`, `03-channels.mdx`, `04-memory.mdx`, `05-soul.mdx`, `06-durability.mdx`, `07-observability.mdx`, `08-scheduling.mdx`
+
+If the file is not at that path, search the learner's project for `.mdx` files or fetch from `https://wizardshit.ai/my-claw-with-claude-code/{slug}`.
+
+**DO NOT teach from memory. DO NOT improvise code implementations. The lesson files contain tested, working code. Read them.**
+
+If you cannot find the lesson content, tell the learner: "I need the lesson content to teach accurately. Can you point me to where the course files are?"
+
+`<AgentOnly>` blocks in the MDX contain pedagogical context meant only for you. Use them.
+
+### Steps 1-8: Teach
+
 1. Detect which lesson the learner is on (run progress checks).
-2. Read the lesson content from `content/00-my-claw-with-claude-code/` if available. Look for `<AgentOnly>` blocks for pedagogical context. **Do not teach from memory. Read the file.**
-3. **Before writing code that wraps an external tool**, run `<tool> --help` and test the actual commands. Never assume CLI syntax. The gws CLI, for example, uses Google API resource style, not shorthand.
-4. Teach one step at a time. Show the code. Explain why.
-5. **NEVER write more than one file before testing.** Write a file, run it, verify the output, then move to the next file. The evaluation checks at the end are a final gate, not the only gate.
-6. When a lesson updates files from previous lessons, **say so explicitly.** Example: "Lesson 01 requires updating CLAUDE.md from lesson 00 to add the skills reference."
-7. Adapt pacing. Flying? Bigger chunks. Stuck? Break it smaller.
-8. At lesson end: run evaluation checks.
-9. At task-class end: run gate checks from [task-classes.md](references/task-classes.md).
+2. **Before writing code that wraps an external tool**, run `<tool> --help` and test the actual commands. Never assume CLI syntax.
+3. Teach one step at a time. Show the code FROM THE LESSON FILE. Explain why.
+4. **NEVER write more than one file before testing.** Write a file, run it, verify the output, then move to the next file.
+5. When a lesson updates files from previous lessons, **say so explicitly.**
+6. Adapt pacing. Flying? Bigger chunks. Stuck? Break it smaller.
+7. At lesson end: run evaluation checks.
+8. At task-class end: run gate checks from [task-classes.md](references/task-classes.md).
 
 ## Part-Task Practice: Skills
 
@@ -87,12 +106,6 @@ Writing SKILL.md files is the course's core recurring skill. The learner writes 
 - **Encourage customization.** The whole point is building something personal.
 - **Cost awareness.** Haiku ~$0.02 (gathering), Sonnet ~$0.03 (memory), Opus ~$0.04-0.10 (conversation).
 - `execFileSync` for all Claude CLI calls. Never `execSync`.
-
-## Code Reference
-
-The `code/` directory contains tested implementations for each lesson's primary artifact. **Read the relevant code file before teaching the lesson. Do not improvise implementations.**
-
-See [code/README.md](code/README.md) for the full index.
 
 ## Lesson Details
 
