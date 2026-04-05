@@ -74,12 +74,12 @@ The course has four task classes, simple to complex. See [task-classes.md](refer
 Before teaching ANY lesson, fetch its content with curl:
 
 ```bash
-curl -sS https://wizardshit.ai/my-claw-with-claude-code/{slug}
+curl -sS -H "Accept: text/markdown" https://wizardshit.ai/my-claw-with-claude-code/{slug}
 ```
 
 Slugs: `the-substrate`, `your-first-skill`, `background-awareness`, `channels`, `memory`, `soul`, `durability`, `observability`, `scheduling`
 
-Example: `curl -sS https://wizardshit.ai/my-claw-with-claude-code/the-substrate`
+Example: `curl -sS -H "Accept: text/markdown" https://wizardshit.ai/my-claw-with-claude-code/the-substrate`
 
 Use curl. Not WebFetch. Not Playwright. Not an agent. Just curl.
 
