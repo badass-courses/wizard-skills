@@ -35,6 +35,7 @@ Read the learner's project to determine where they are. Check files in order. Th
 | `gather.mjs` exists with adapter imports | 02 Background Awareness | Gatherer built |
 | `.claw/cache/digest.md` exists | 02 Background Awareness | Gatherer has run |
 | `adapters/email.mjs` and `adapters/calendar.mjs` exist | 02 Background Awareness | Adapter pattern in place |
+| `skills/gather/SKILL.md` exists | 02 Background Awareness | Gather skill created |
 | `channel.mjs` with `import { Chat }` | 03 Channels | Channel layer built |
 | `package.json` has `chat` dependency | 03 Channels | Chat SDK installed |
 | `.env` with `TELEGRAM_BOT_TOKEN` | 03 Channels | Bot token configured |
@@ -43,6 +44,7 @@ Read the learner's project to determine where they are. Check files in order. Th
 | `.claude-plugin/plugin.json` exists | 04 Memory | Plugin structure in place |
 | `hooks/hooks.json` with `UserPromptSubmit` | 04 Memory | Datetime hook configured |
 | `bin/inject-datetime.sh` exists and is executable | 04 Memory | Hook script ready |
+| `skills/memory/SKILL.md` exists | 04 Memory | Memory skill created |
 | `SOUL.md` exists with content beyond template | 05 Soul | Soul defined |
 | `IDENTITY.md` with no "not yet" placeholders | 05 Soul | Bootstrap complete |
 | `USER.md` with operator name filled in | 05 Soul | Operator profile set |
@@ -50,13 +52,16 @@ Read the learner's project to determine where they are. Check files in order. Th
 | `service/my-claw.plist.template` exists | 06 Durability | launchd service configured |
 | `service/install.sh` exists and is executable | 06 Durability | Install script ready |
 | `.claw/owner-chat-id` exists | 06 Durability | Restart notifications wired |
+| `skills/service/SKILL.md` exists | 06 Durability | Service skill created |
 | `log.mjs` with `log`, `query`, `summarize` exports | 07 Observability | Structured logging built |
 | `.claw/logs/claw.jsonl` exists | 07 Observability | Logging is active |
 | `claw.mjs` imports `summarize` from `log.mjs` | 07 Observability | Claw reads its own logs |
+| `skills/logs/SKILL.md` exists | 07 Observability | Logs skill created |
 | `schedule.mjs` exists with gate logic | 08 Scheduling | Schedule runner built |
 | `schedule.json` exists with tasks | 08 Scheduling | Tasks configured |
 | `gates/` directory with at least one `.sh` file | 08 Scheduling | Script gates in place |
 | `service/my-claw-schedule.plist.template` exists | 08 Scheduling | Schedule service configured |
+| `skills/schedule/SKILL.md` exists | 08 Scheduling | Schedule skill created |
 
 ## Lesson Map
 
