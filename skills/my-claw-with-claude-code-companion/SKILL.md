@@ -73,9 +73,21 @@ Before teaching ANY lesson, you MUST read the lesson file:
 content/00-my-claw-with-claude-code/{NN}-{slug}.mdx
 ```
 
-Files: `00-the-substrate.mdx`, `01-your-first-skill.mdx`, `02-background-awareness.mdx`, `03-channels.mdx`, `04-memory.mdx`, `05-soul.mdx`, `06-durability.mdx`, `07-observability.mdx`, `08-scheduling.mdx`
+Files and their web URLs:
 
-If the file is not at that path, search the learner's project for `.mdx` files or fetch from `https://wizardshit.ai/my-claw-with-claude-code/{slug}`.
+| File | URL |
+|------|-----|
+| `00-the-substrate.mdx` | `wizardshit.ai/my-claw-with-claude-code/the-substrate` |
+| `01-your-first-skill.mdx` | `wizardshit.ai/my-claw-with-claude-code/your-first-skill` |
+| `02-background-awareness.mdx` | `wizardshit.ai/my-claw-with-claude-code/background-awareness` |
+| `03-channels.mdx` | `wizardshit.ai/my-claw-with-claude-code/channels` |
+| `04-memory.mdx` | `wizardshit.ai/my-claw-with-claude-code/memory` |
+| `05-soul.mdx` | `wizardshit.ai/my-claw-with-claude-code/soul` |
+| `06-durability.mdx` | `wizardshit.ai/my-claw-with-claude-code/durability` |
+| `07-observability.mdx` | `wizardshit.ai/my-claw-with-claude-code/observability` |
+| `08-scheduling.mdx` | `wizardshit.ai/my-claw-with-claude-code/scheduling` |
+
+If the local MDX file is not found, fetch the lesson from `https://wizardshit.ai/my-claw-with-claude-code/{slug}` using the slugs above (no numeric prefix).
 
 **DO NOT teach from memory. DO NOT improvise code implementations. The lesson files contain tested, working code. Read them.**
 
