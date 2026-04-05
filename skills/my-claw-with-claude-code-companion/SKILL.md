@@ -47,6 +47,16 @@ Read the learner's project to determine where they are. Check files in order. Th
 | `IDENTITY.md` with no "not yet" placeholders | 05 Soul | Bootstrap complete |
 | `USER.md` with operator name filled in | 05 Soul | Operator profile set |
 | `BOOTSTRAP.md` does NOT exist | 05 Soul | Bootstrap self-destructed |
+| `service/my-claw.plist.template` exists | 06 Durability | launchd service configured |
+| `service/install.sh` exists and is executable | 06 Durability | Install script ready |
+| `.claw/owner-chat-id` exists | 06 Durability | Restart notifications wired |
+| `log.mjs` with `log`, `query`, `summarize` exports | 07 Observability | Structured logging built |
+| `.claw/logs/claw.jsonl` exists | 07 Observability | Logging is active |
+| `claw.mjs` imports `summarize` from `log.mjs` | 07 Observability | Claw reads its own logs |
+| `schedule.mjs` exists with gate logic | 08 Scheduling | Schedule runner built |
+| `schedule.json` exists with tasks | 08 Scheduling | Tasks configured |
+| `gates/` directory with at least one `.sh` file | 08 Scheduling | Script gates in place |
+| `service/my-claw-schedule.plist.template` exists | 08 Scheduling | Schedule service configured |
 
 ## Lesson Map
 
@@ -158,6 +168,67 @@ Read the learner's project to determine where they are. Check files in order. Th
 - [ ] `USER.md` has operator name and timezone
 - [ ] `BOOTSTRAP.md` does NOT exist (self-destructed after completing)
 - [ ] Asking the claw the same question produces responses with distinct personality/tone
+
+### 06 — Durability
+
+**What they build:** launchd plist that starts the claw on login, restarts on crash, and notifies on Telegram when it comes back.
+
+**Key files:** `service/my-claw.plist.template`, `service/install.sh`, `.claw/owner-chat-id`, `.claw/last-start`
+
+**Gotchas:**
+- `launchctl bootstrap`/`bootout` is the modern API. `load`/`unload` is deprecated.
+- `.claw/` must be on the host filesystem, not inside the container. Mount it.
+- `bot.channel(chatId)` not `bot.openDM()` for restart notifications. Numeric IDs need the adapter prefix.
+- `ThrottleInterval: 10` prevents crash loops from eating the machine.
+- 5-second delay before restart notification gives Telegram adapter time to connect.
+
+**Evaluation checks:**
+- [ ] `service/my-claw.plist.template` has `RunAtLoad`, `KeepAlive`, and `ThrottleInterval`
+- [ ] `./service/install.sh` runs without error and loads the plist
+- [ ] Killing the Docker container triggers launchd restart within 10 seconds
+- [ ] After restart, operator receives "I'm back" message on Telegram
+- [ ] `.claw/` directory persists across restarts (sessions, memory, digest all intact)
+
+### 07 — Observability
+
+**What they build:** Structured JSONL logging with high-cardinality fields. The claw reads its own activity summary. Operator queries with jq.
+
+**Key files:** `log.mjs`, `.claw/logs/claw.jsonl`, `CLAUDE.md` (observability section)
+
+**Gotchas:**
+- `ts` (millisecond epoch) for querying, `t` (ISO string) for reading. Both on every entry.
+- `query()` reads from end of file for recency. Reverse chronological, then re-reverse for output.
+- Activity summary injected as `[SYSTEM ACTIVITY]` in claw context. Update CLAUDE.md to tell the claw to use it.
+- `run.sh logs`, `run.sh costs`, `run.sh errors` for operator-side jq queries.
+
+**Evaluation checks:**
+- [ ] `log.mjs` exports `log`, `query`, and `summarize` functions
+- [ ] After interactions, `.claw/logs/claw.jsonl` contains structured entries with `type`, `ts`, `t`
+- [ ] `node -e "import('./log.mjs').then(m => console.log(m.summarize(24)))"` produces a readable summary
+- [ ] `claw.mjs` includes activity summary in context before responding
+- [ ] `./run.sh costs` outputs cost breakdown by type
+
+### 08 — Scheduling
+
+**What they build:** Scheduled tasks with script gates. A second launchd service runs every 15 minutes. Bash gates decide if work is worth doing before spending tokens. Notifications are opt-in.
+
+**Key files:** `schedule.mjs`, `schedule.json`, `gates/*.sh`, `service/my-claw-schedule.plist.template`
+
+**Gotchas:**
+- Script gates exit with no output to close (skip). JSON output with `wakeAgent: true` to open (wake the claw).
+- `StartInterval` not `KeepAlive` for periodic tasks. The scheduler runs and exits, not continuously.
+- Time-window gates need a "last run" file to prevent firing every cycle during the window.
+- Cost architecture matters. Opus every 15 minutes is $3.84/day. Script gates cut that by 90%.
+- `stat -f %m` on macOS, `stat -c %Y` on Linux. Gates need to handle both if targeting Docker.
+- Default is silent. Claw writes files, not messages. `notify: true` is opt-in per task.
+
+**Evaluation checks:**
+- [ ] `schedule.json` has at least one task with `name`, `gate`, and `prompt`
+- [ ] `gates/` has at least one executable `.sh` file
+- [ ] Running a gate script produces either no output (closed) or JSON with `wakeAgent` (open)
+- [ ] `node schedule.mjs` runs gates and logs results to `.claw/logs/claw.jsonl`
+- [ ] `service/my-claw-schedule.plist.template` has `StartInterval` (not `KeepAlive`)
+- [ ] No task sends unsolicited messages unless `notify: true` is set
 
 ## Response Rules
 
