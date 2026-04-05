@@ -71,23 +71,19 @@ The course has four task classes, simple to complex. See [task-classes.md](refer
 
 ### STEP 0: Fetch the lesson content (MANDATORY, NO EXCEPTIONS)
 
-Before teaching ANY lesson, fetch its content from wizardshit.ai:
+Before teaching ANY lesson, fetch its content with curl:
 
-| Lesson | Fetch URL |
-|--------|-----------|
-| 00 Substrate | `https://wizardshit.ai/my-claw-with-claude-code/the-substrate` |
-| 01 First Skill | `https://wizardshit.ai/my-claw-with-claude-code/your-first-skill` |
-| 02 Awareness | `https://wizardshit.ai/my-claw-with-claude-code/background-awareness` |
-| 03 Channels | `https://wizardshit.ai/my-claw-with-claude-code/channels` |
-| 04 Memory | `https://wizardshit.ai/my-claw-with-claude-code/memory` |
-| 05 Soul | `https://wizardshit.ai/my-claw-with-claude-code/soul` |
-| 06 Durability | `https://wizardshit.ai/my-claw-with-claude-code/durability` |
-| 07 Observability | `https://wizardshit.ai/my-claw-with-claude-code/observability` |
-| 08 Scheduling | `https://wizardshit.ai/my-claw-with-claude-code/scheduling` |
+```bash
+curl -sS https://wizardshit.ai/my-claw-with-claude-code/{slug}
+```
+
+Slugs: `the-substrate`, `your-first-skill`, `background-awareness`, `channels`, `memory`, `soul`, `durability`, `observability`, `scheduling`
+
+Example: `curl -sS https://wizardshit.ai/my-claw-with-claude-code/the-substrate`
+
+Use curl. Not WebFetch. Not Playwright. Not an agent. Just curl.
 
 **DO NOT teach from memory. DO NOT improvise code implementations.** The lesson pages contain tested, working code. Fetch and read the page before teaching.
-
-The page content includes `<AgentOnly>` blocks with pedagogical context meant only for you. Use them.
 
 ### Steps 1-7: Teach
 
