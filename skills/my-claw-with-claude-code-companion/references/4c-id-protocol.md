@@ -118,7 +118,15 @@ When the learner advances to a new task class, support temporarily increases bec
    - `execSync` instead of `execFileSync`
    - Missing `.env` variable
    - Docker image not rebuilt after code change
+   - CLI tool syntax doesn't match what the code assumes (test the tool!)
 3. Don't guess. Read the file, identify the line, explain the fix.
+
+### You (the companion) wrote bad code
+This will happen. The fix:
+1. Admit it immediately. Don't deflect.
+2. Test the actual tool/command before rewriting.
+3. Write one file, run it, verify. Then the next file.
+4. Never write adapter code for a CLI tool without running `<tool> --help` first.
 
 ### Learner is lost
 1. Determine which task class they're in.

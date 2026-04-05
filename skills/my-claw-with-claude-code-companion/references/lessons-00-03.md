@@ -24,12 +24,18 @@
 
 **Key files:** `skills/gws/SKILL.md`, `.claude/settings.json`
 
+**Updates to prior files:**
+- `CLAUDE.md`: Should already have `Check skills/ for available capabilities` from lesson 00. If the learner's CLAUDE.md says "conversation only" or doesn't mention skills, fix it now.
+
 **Prerequisites:** `gws` CLI installed and authenticated (`gws auth setup`). Takes 10-15 minutes. Requires Google Cloud project + OAuth.
+
+**CRITICAL: Test gws before writing the skill.** Run `gws --help` to see the actual CLI interface. The gws CLI uses Google API resource style (e.g., `gws gmail users messages list --params '{...}'`), NOT shorthand like `gws gmail list`. Write the skill based on what actually works, not assumptions.
 
 **Gotchas:**
 - Fresh Claude Code has zero MCP servers. Gmail/Calendar are NOT stock.
 - `--permission-mode acceptEdits` still blocks Bash. Need `.claude/settings.json` with `Bash(gws:*)`.
 - `gws auth setup` can fail with `Error: invalid_grant` if consent screen not published.
+- gws CLI syntax varies by version. Always test commands before writing skill or adapter code.
 
 **Evaluation checks:**
 - [ ] `skills/gws/SKILL.md` exists with gmail and calendar commands
@@ -45,6 +51,12 @@
 **What they build:** A background gatherer that pulls email/calendar via adapters, interprets with Haiku, caches a digest the claw reads.
 
 **Key files:** `gather.mjs`, `adapters/email.mjs`, `adapters/calendar.mjs`, `.claw/cache/digest.md`, `skills/gather/SKILL.md`
+
+**Updates to prior files:**
+- `CLAUDE.md`: Add digest awareness section.
+- `claw.mjs`: Add `DIGEST_FILE` constant and context injection.
+
+**CRITICAL: Adapters must use real gws syntax.** Run `gws gmail users messages list --params '{"userId":"me","maxResults":5}' ` and `gws calendar events list --params '{"calendarId":"primary",...}'` to verify the actual commands before writing adapter code. The lesson shows the pattern but the learner's gws version may differ.
 
 **Gotchas:**
 - Continued session (`--resume`) gives delta awareness. Fresh sessions don't.

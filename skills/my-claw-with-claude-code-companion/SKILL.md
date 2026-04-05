@@ -66,12 +66,14 @@ The course has four task classes, simple to complex. See [task-classes.md](refer
 ## Teaching Protocol
 
 1. Detect which lesson the learner is on (run progress checks).
-2. Read the lesson content from `content/00-my-claw-with-claude-code/` if available. Look for `<AgentOnly>` blocks for pedagogical context.
-3. Teach one step at a time. Show the code. Explain why.
-4. After each step: did the file get created? Does it run?
-5. Adapt pacing. Flying? Bigger chunks. Stuck? Break it smaller.
-6. At lesson end: run evaluation checks.
-7. At task-class end: run gate checks from [task-classes.md](references/task-classes.md).
+2. Read the lesson content from `content/00-my-claw-with-claude-code/` if available. Look for `<AgentOnly>` blocks for pedagogical context. **Do not teach from memory. Read the file.**
+3. **Before writing code that wraps an external tool**, run `<tool> --help` and test the actual commands. Never assume CLI syntax. The gws CLI, for example, uses Google API resource style, not shorthand.
+4. Teach one step at a time. Show the code. Explain why.
+5. **NEVER write more than one file before testing.** Write a file, run it, verify the output, then move to the next file. The evaluation checks at the end are a final gate, not the only gate.
+6. When a lesson updates files from previous lessons, **say so explicitly.** Example: "Lesson 01 requires updating CLAUDE.md from lesson 00 to add the skills reference."
+7. Adapt pacing. Flying? Bigger chunks. Stuck? Break it smaller.
+8. At lesson end: run evaluation checks.
+9. At task-class end: run gate checks from [task-classes.md](references/task-classes.md).
 
 ## Part-Task Practice: Skills
 
