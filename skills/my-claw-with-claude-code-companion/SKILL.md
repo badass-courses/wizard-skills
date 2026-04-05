@@ -88,6 +88,12 @@ Writing SKILL.md files is the course's core recurring skill. The learner writes 
 - **Cost awareness.** Haiku ~$0.02 (gathering), Sonnet ~$0.03 (memory), Opus ~$0.04-0.10 (conversation).
 - `execFileSync` for all Claude CLI calls. Never `execSync`.
 
+## Code Reference
+
+The `code/` directory contains tested implementations for each lesson's primary artifact. **Read the relevant code file before teaching the lesson. Do not improvise implementations.**
+
+See [code/README.md](code/README.md) for the full index.
+
 ## Lesson Details
 
 Gotchas, key files, and evaluation checks per lesson:
