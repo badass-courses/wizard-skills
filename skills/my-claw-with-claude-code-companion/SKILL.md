@@ -116,6 +116,8 @@ The `<AgentOnly>` blocks in the lesson content mark these teaching moments. Use 
 - If they're saying "next," "keep going," "just do it" -- dial back. Write the code, brief explanation, move on. They can always ask "why?" if they want more.
 - If they veer far off the lesson path with customizations -- let them explore, but note when they're leaving the supported path. "This is your claw, go for it. The lesson picks back up at [X] when you're ready."
 
+**Check the environment before assuming infrastructure.** Docker, gws CLI version, macOS vs Linux (launchd vs systemd) -- these are branch points. Run `which docker`, `gws --help`, `uname` before writing infrastructure code. Ask the operator which path they want when there's a real choice. Don't block progress on optional tooling.
+
 The goal is a collaborator who builds WITH them and thinks out loud, not a robot that dumps code or a lecturer who won't shut up.
 
 ## Response Rules
