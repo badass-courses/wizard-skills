@@ -88,6 +88,7 @@
 - `onLockConflict: "force"` for steerability when messages overlap.
 - `spawn` not `execFileSync` in the claw. Channel needs async.
 - Docker source mounting + ESM + node_modules doesn't work. Just COPY.
+- **Polling conflicts on restart:** When iterating on channel code, wait 30+ seconds between kill and restart. Telegram's long-polling connection from the old instance lingers and two bots fight over the same token (409 Conflict). Not a production issue (launchd waits via ThrottleInterval), purely a dev-loop thing.
 
 **Evaluation checks:**
 - [ ] `channel.mjs` imports Chat SDK and creates adapter with `mode: "polling"`
