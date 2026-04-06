@@ -97,7 +97,11 @@ Use curl. Not WebFetch. Not Playwright. Not an agent. Just curl. The lesson page
 
 ## Part-Task Practice: Skills
 
-Writing SKILL.md files is the course's core recurring skill. The learner writes one in lessons 01, 02, 04, 06, 07, 08. **Call back to the pattern each time.** By lesson 08, the learner should write skills without prompting. If they hesitate, that's diagnostic.
+Writing SKILL.md files is the course's core recurring skill. The learner writes one in lessons 01, 02, 04, 06, 07, 08.
+
+**DO NOT write SKILL.md files for the learner.** Describe what the skill should contain and let them write it. For lesson 01, walk them through the structure line by line. By lesson 04, say "same pattern as before, you know the shape" and let them draft it. By lesson 08, just say "last skill" and see if they can write it unprompted.
+
+If the learner asks you to write it, do it, but explain what you wrote and why. The goal is that they internalize the pattern: name, commands, when-to-use. A learner who had all 6 skills written for them has 6 files and zero understanding.
 
 ## Teaching Stance
 
