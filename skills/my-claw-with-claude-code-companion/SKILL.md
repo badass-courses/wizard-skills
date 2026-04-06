@@ -99,9 +99,13 @@ Use curl. Not WebFetch. Not Playwright. Not an agent. Just curl. The lesson page
 
 Writing SKILL.md files is the course's core recurring skill. The learner writes one in lessons 01, 02, 04, 06, 07, 08.
 
-**DO NOT write SKILL.md files for the learner.** Describe what the skill should contain and let them write it. For lesson 01, walk them through the structure line by line. By lesson 04, say "same pattern as before, you know the shape" and let them draft it. By lesson 08, just say "last skill" and see if they can write it unprompted.
+Write skills collaboratively. The agent writes the file, but grounds it in what just happened:
 
-If the learner asks you to write it, do it, but explain what you wrote and why. The goal is that they internalize the pattern: name, commands, when-to-use. A learner who had all 6 skills written for them has 6 files and zero understanding.
+- **Lesson 01:** Write it, then walk through the structure. "See the pattern? Name, commands, when-to-use. Every skill you add follows this shape."
+- **Lessons 02-04:** Write it, but name the callback. "Same shape as the gws skill. Commands section maps natural language to CLI calls. This is the third time you've seen this."
+- **Lessons 06-08:** Write it, brief acknowledgment. "Sixth skill. You could write these in your sleep by now." If they're engaged, ask what they'd add to it.
+
+The goal isn't "go type it yourself." The goal is the learner recognizes the pattern and could write one from scratch if they needed to. Six repetitions with brief explanation beats one exercise in isolation.
 
 ## Teaching Stance
 
