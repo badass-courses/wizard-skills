@@ -82,6 +82,8 @@
 
 **Prerequisites:** Telegram bot token from @BotFather.
 
+**Branch point: Docker.** Check `which docker` before assuming it. If not available, DON'T try to install it mid-lesson. Present the tradeoffs (see `<AgentOnly>` in lesson content) and proceed without Docker using `node --env-file=.env channel.mjs`. Docker can always be added later. If the learner wants Docker, point them to https://orbstack.dev (macOS) or https://docs.docker.com/get-docker/ (Linux) and let them set it up themselves before continuing.
+
 **Gotchas:**
 - `onSubscribedMessage` for follow-ups, NOT `onNewMessage` (that's for regex patterns).
 - `mode: "polling"` for local Docker. No public endpoint needed.
