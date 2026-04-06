@@ -55,9 +55,11 @@
 | Soul | SOUL.md | System prompt | Rarely |
 | Identity | IDENTITY.md | System prompt | Once (bootstrap) |
 | Operator | USER.md | System prompt | Rarely |
-| Bootstrap | BOOTSTRAP.md | System prompt | Self-destructs |
 | Memory | MEMORY.md | User context | Every 10 minutes |
 | Digest | digest.md | User context | Every gather cycle |
+| Bootstrap | BOOTSTRAP.md | User context | Self-destructs |
 | Message | operator input | User message | Every turn |
+
+**Critical: Bootstrap goes in user context, NOT system prompt.** In testing, bootstrap instructions in the system prompt get drowned out by 3000+ chars of soul/identity. The model follows the personality but ignores "ask a question at the end." In user context, right before the message, it works.
 
 This table is one of the most important pieces of supportive information in the course. If the learner is confused about what goes where, show this table.
